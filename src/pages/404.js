@@ -13,7 +13,7 @@ const StyledMainContainer = styled.main`
   flex-direction: column;
 `;
 const StyledTitle = styled.h1`
-  color: var(--green);
+  color: var(--cyan);
   font-family: var(--font-mono);
   font-size: clamp(100px, 25vw, 200px);
   line-height: 1;
@@ -25,6 +25,10 @@ const StyledSubtitle = styled.h2`
 const StyledHomeButton = styled(Link)`
   ${({ theme }) => theme.mixins.bigButton};
   margin-top: 40px;
+  &:focus:after {
+    border-color: transparent;
+    webkit-box-shadow: none;
+    box-shadow: none;
 `;
 
 const NotFoundPage = ({ location }) => {

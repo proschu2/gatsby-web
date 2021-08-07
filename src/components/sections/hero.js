@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
-import { email } from '@config';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 
@@ -18,7 +17,7 @@ const StyledHeroSection = styled.section`
 
   h1 {
     margin: 0 0 30px 4px;
-    color: var(--green);
+    color: var(--cyan);
     font-family: var(--font-mono);
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
     font-weight: 400;
@@ -58,21 +57,25 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const one = <h1>Hi, I am</h1>;
+  const two = <h2 className="big-heading">Sanzio Monti</h2>;
+  const three = <h3 className="big-heading">Data Scientist & Developer</h3>;
   const four = (
     <p>
-      I'm a software engineer specializing in building (and occasionally designing) exceptional
-      digital experiences. Currently, I'm focused on building accessible, human-centered products at{' '}
-      <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-        Upstatement
+      Technology enthusiast with a passion for data and programming
+      <br /> Currently a Developer at{' '}
+      <a href="https://mila.com/" target="_blank" rel="noreferrer">
+        Mila
       </a>
-      .
+      , soon a{' '}
+      <a href="https://post.ch" target="_blank" rel="noreferrer">
+        Swiss Post
+      </a>{' '}
+      Data Analyst
     </p>
   );
   const five = (
-    <a href={`mailto:${email}`} className="email-link">
+    <a href={`#contact`} className="email-link">
       Get In Touch
     </a>
   );

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { srConfig, email } from '@config';
+import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
@@ -16,7 +16,7 @@ const StyledContactSection = styled.section`
   .overline {
     display: block;
     margin-bottom: 20px;
-    color: var(--green);
+    color: var(--cyan);
     font-family: var(--font-mono);
     font-size: var(--fz-md);
     font-weight: 400;
@@ -64,7 +64,7 @@ const Contact = () => {
         Whether you have a question or just want to say hi, I'll try my best to get back to you!
       </p>
 
-      <a className="email-link" href={`mailto:${email}`}>
+      <a className="email-link" href={`https://r.sanziomonti.com/mail`}>
         Say Hello
       </a>
     </StyledContactSection>
