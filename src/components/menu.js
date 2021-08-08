@@ -266,8 +266,8 @@ const Menu = () => {
               </ol>
             )}
 
-            <a href="/resume.pdf" className="resume-link">
-              Resume
+            <a href="/CV_SM.pdf" className="resume-link">
+              CV
             </a>
           </nav>
         </StyledSidebar>

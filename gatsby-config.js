@@ -5,8 +5,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: 'Sanzio Monti',
-    description:
-      'Sanzio Monti is a developer and data scientist who specializes in  on  Brittany Chiang is a software engineer who specializes in building (and occasionally designing) exceptional digital experiences.',
+    description: 'Sanzio Monti is a developer and data scientist who specializes in .',
     siteUrl: 'https://sanziomonti.com', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
   },
@@ -21,13 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'SanzioMonti',
-        short_name: 'SanzioMonti',
+        name: 'Sanzio Monti',
+        short_name: 'Sanzio Monti',
         start_url: '/',
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
         display: 'minimal-ui',
-        icon: 'src/images/icon.png',
+        icon: 'src/images/favicon.svg',
       },
     },
     `gatsby-plugin-offline`,

@@ -56,7 +56,6 @@ const StyledPic = styled.div`
   }
 
   .wrapper {
-    ${({ theme }) => theme.mixins.boxShadow};
     display: block;
     position: relative;
     width: 100%;
@@ -81,7 +80,7 @@ const StyledPic = styled.div`
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      filter: grayscale(50%) contrast(1);
+      filter: grayscale(75%) contrast(1);
       transition: var(--transition);
     }
 

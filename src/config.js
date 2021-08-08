@@ -4,24 +4,12 @@ module.exports = {
   socialMedia: [
     {
       name: 'GitHub',
-      url: 'https://github.com/proschu2',
+      url: 'https://r.sanziomonti.com/github',
     },
-    /* {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7',
-    }, */
-    /*  {
-      name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
-    }, */
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/sanziomonti',
+      url: 'https://r.sanziomonti.com/in',
     },
-    /*  {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7',
-    }, */
   ],
 
   navLinks: [
