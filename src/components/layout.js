@@ -64,8 +64,7 @@ const Layout = ({ children, location }) => {
               {' '}
               {children} <Footer />
             </div>{' '}
-          </StyledContent>
-          ){' '}
+          </StyledContent>{' '}
         </ThemeProvider>{' '}
       </div>{' '}
     </>
