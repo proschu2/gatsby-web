@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { socialMedia } from '@config';
 import { Side } from '@components';
 import { Icon } from '@components/icons';
+import { useMounted } from '@hooks';
 
 const StyledSocialList = styled.ul`
   display: flex;
@@ -17,7 +18,7 @@ const StyledSocialList = styled.ul`
     content: '';
     display: block;
     width: 1px;
-    height: 90px;
+    height: 40px;
     margin: 0 auto;
     background-color: var(--light-slate);
   }
@@ -43,23 +44,22 @@ const StyledSocialList = styled.ul`
   }
 `;
 
-const Social = () => (
-  <Side isHome={true} orientation="left">
-    <StyledSocialList>
-      {socialMedia &&
-        socialMedia.map(({ url, name }, i) => (
-          <li key={i}>
-            <a href={url} aria-label={name} target="_blank" rel="noreferrer">
-              <Icon name={name} />
-            </a>
-          </li>
-        ))}
-    </StyledSocialList>
-  </Side>
-);
-
-/*Social.propTypes = {
-   isHome: PropTypes.bool, 
-};*/
+const Social = () => {
+  const isMounted = useMounted(300);
+  return (
+    <Side isHome={isMounted} orientation="left">
+      <StyledSocialList>
+        {socialMedia &&
+          socialMedia.map(({ url, name }, i) => (
+            <li key={i}>
+              <a href={url} aria-label={name} target="_blank" rel="noreferrer">
+                <Icon name={name} />
+              </a>
+            </li>
+          ))}
+      </StyledSocialList>
+    </Side>
+  );
+};
 
 export default Social;

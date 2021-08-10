@@ -45,7 +45,7 @@ const StyledHeroSection = styled.section`
 `;
 
 const Hero = () => {
-  const isMounted = useMounted(200);
+  const isMounted = useMounted(250);
 
   const one = <h1>Hi, I am</h1>;
   const two = <h2 className="big-heading">Sanzio Monti</h2>;
