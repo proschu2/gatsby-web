@@ -14,3 +14,6 @@ export { default as IconPlayStore } from './playstore';
 export { default as IconStar } from './star';
 export { default as IconTwitter } from './twitter';
 export { default as IconSM } from './sm';
+export { default as IconTypeScript } from './typescript';
+export { default as IconGatsby } from './gatsby';
+export { default as IconPython } from './python';

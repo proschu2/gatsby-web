@@ -16,6 +16,9 @@ import {
   IconStar,
   IconTwitter,
   IconSM,
+  IconGatsby,
+  IconTypeScript,
+  IconPython,
 } from '@components/icons';
 
 const Icon = ({ name }) => {
@@ -50,6 +53,12 @@ const Icon = ({ name }) => {
       return <IconTwitter />;
     case 'Sanzio':
       return <IconSM />;
+    case 'Gatsby':
+      return <IconGatsby />;
+    case 'TypeScript':
+      return <IconTypeScript />;
+    case 'Python':
+      return <IconPython />;
     default:
       return <IconExternal />;
   }
