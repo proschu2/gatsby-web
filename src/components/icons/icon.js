@@ -19,6 +19,15 @@ import {
   IconGatsby,
   IconTypeScript,
   IconPython,
+  IconHtml,
+  IconCss,
+  IconR,
+  IconGraphQL,
+  IconPostgreSQL,
+  IconGit,
+  IconElasticSearch,
+  IconReact,
+  IconAngular,
 } from '@components/icons';
 
 const Icon = ({ name }) => {
@@ -59,6 +68,24 @@ const Icon = ({ name }) => {
       return <IconTypeScript />;
     case 'Python':
       return <IconPython />;
+    case 'HTML':
+      return <IconHtml />;
+    case 'CSS':
+      return <IconCss />;
+    case 'R':
+      return <IconR />;
+    case 'GraphQL':
+      return <IconGraphQL />;
+    case 'PostgreSQL':
+      return <IconPostgreSQL />;
+    case 'Git':
+      return <IconGit />;
+    case 'Elasticsearch':
+      return <IconElasticSearch />;
+    case 'React':
+      return <IconReact />;
+    case 'Angular':
+      return <IconAngular />;
     default:
       return <IconExternal />;
   }

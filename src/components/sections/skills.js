@@ -55,7 +55,20 @@ const Skills = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['Python', 'TypeScript', 'Gatsby'];
+  const skills = [
+    'Python',
+    'R',
+    'TypeScript',
+    'GraphQL',
+    'React',
+    'Gatsby',
+    'Angular',
+    'HTML',
+    'CSS',
+    'PostgreSQL',
+    'Git',
+    'Elasticsearch',
+  ];
 
   return (
     <StyledSkillsSection id="skills" ref={revealContainer}>
