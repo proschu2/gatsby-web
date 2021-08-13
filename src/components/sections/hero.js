@@ -38,23 +38,29 @@ const StyledHeroSection = styled.section`
     max-width: 540px;
   }
 
+  a {
+    font-family: var(--font-mono);
+    font-size: var(--fz-md);
+  }
+
   .email-link {
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
+    padding: 1rem;
   }
 `;
 
 const Hero = () => {
   const isMounted = useMounted(250);
 
-  const one = <h1>Hi, I am</h1>;
+  const one = <h1>Hi! I am</h1>;
   const two = <h2 className="big-heading">Sanzio Monti</h2>;
   const three = <h3 className="big-heading">Data Scientist & Developer</h3>;
   const four = (
     <p>
       Technology enthusiast with a passion for data and programming
       <br /> Currently a Developer at{' '}
-      <a href="https://mila.com/" target="_blank" rel="noreferrer">
+      <a href="https://mila.com/" className="inline-link" target="_blank" rel="noreferrer">
         Mila
       </a>
       , soon a{' '}

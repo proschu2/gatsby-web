@@ -31,17 +31,19 @@ const SkillIcon = styled.div`
 `;
 
 const SkillName = styled.p`
-  padding-left: 1rem;
   padding-right: 1rem;
   line-height: 1.25rem;
   margin: 0;
   padding-top: 5px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const SkillsContainer = styled.ul`
   margin-left: auto;
   margin-right: auto;
-  max-width: 48rem;
+  max-width: 38rem;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;

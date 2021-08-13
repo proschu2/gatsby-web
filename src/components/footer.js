@@ -44,7 +44,7 @@ const StyledCredit = styled.div`
   font-family: var(--font-mono);
   font-size: var(--fz-xxs);
   line-height: 1;
-  opacity: 10%;
+  opacity: 20%;
 
   a {
     padding: 10px;

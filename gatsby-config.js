@@ -5,7 +5,8 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: 'Sanzio Monti',
-    description: 'Sanzio Monti is a developer and data scientist who specializes in .',
+    description:
+      'Sanzio Monti is a developer and data scientist, feel free to give a look at his page!',
     siteUrl: 'https://sanziomonti.com', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
   },

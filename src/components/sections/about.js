@@ -48,41 +48,37 @@ const StyledText = styled.div`
 const StyledPic = styled.div`
   position: relative;
   max-width: 300px;
-
   @media (max-width: 768px) {
     margin: 50px auto 0;
     width: 70%;
   }
-
   .wrapper {
+    ${({ theme }) => theme.mixins.boxShadow};
     display: block;
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
-
+    background-color: var(--cyan);
     &:hover,
     &:focus {
       background: transparent;
       outline: 0;
-
       &:after {
         top: 15px;
         left: 15px;
       }
-
       .img {
         filter: none;
         mix-blend-mode: normal;
       }
     }
-
     .img {
       position: relative;
       border-radius: var(--border-radius);
+      mix-blend-mode: multiply;
       filter: grayscale(75%) contrast(1);
       transition: var(--transition);
     }
-
     &:before,
     &:after {
       content: '';
@@ -103,8 +99,6 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['Python', 'R', 'TypeScript', 'Git', 'React', 'GraphQL'];
-
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
       <h2 className="numbered-heading">About Me</h2>
@@ -113,12 +107,9 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello there! My name is Sanzio Monti and ...
-              {/* 
-              and I enjoy creating
-              things that live on the internet. My interest in web development started back in 2012
-              when I decided to try editing custom Tumblr themes — turns out hacking together a
-              custom reblog button taught me a lot about HTML &amp; CSS! */}
+              Hello there! My name is Sanzio Monti and I am a mathematician who focused his studies
+              in statistics while keeping an eye open toward software development: a mix that led me
+              towards data science during my studies at ETH Zurich.
             </p>
 
             <p>
@@ -130,20 +121,19 @@ const About = () => {
               <a href="https://post.ch/">Swiss post</a>, where I'll be in charge of analysing
               customer data.
             </p>
-
-            <p>Here are a few technologies I've been working with recently:</p>
+            <p>
+              In my free time I like to keep myself updated about what happens in the world and on
+              technology development, to travel toward far-away destinations, and to snowboard on
+              the wonderful Swiss mountains.
+            </p>
           </div>
-
-          <ul className="skills-list">
-            {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
-          </ul>
         </StyledText>
 
         <StyledPic>
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/sanzio.png"
+              src="../../images/sanzio.jpg"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
