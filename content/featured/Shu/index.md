@@ -10,4 +10,4 @@ tech:
 showInProjects: true
 ---
 
-A generator of _untranslatable_ words with their meaning written with react.
+A generator of _untranslatable_ words with their meaning written with React.
