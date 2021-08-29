@@ -154,11 +154,48 @@ module.exports = {
         ],
       },
     },
-    /* {
-      resolve: `gatsby-plugin-google-analytics`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
       options: {
-        trackingId: 'UA-45666519-2',
+        printRejected: true, // Print removed selectors and processed file names
+        // develop: true, // Enable while using `gatsby develop`
+        // tailwind: true, // Enable tailwindcss support
+        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
+        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+        purgeCSSOptions: {
+          // https://purgecss.com/configuration.html#options
+          // safelist: ['safelist'], // Don't remove this selector
+        },
       },
-    }, */
+    },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        includeInDevelopment: true, // optional parameter to include script in development
+        id: 2576986,
+        sv: 6,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ['G-MTCNRNNEWR'],
+        gtagConfig: {
+          anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: true,
+          respectDNT: true,
+          // exclude: ["/preview/**", "/do-not-track/me/too/"],
+        },
+      },
+    },
+    /* {
+          resolve: `gatsby-plugin-google-analytics`,
+          options: {
+            trackingId: 'UA-45666519-2',
+          },
+        }, */
   ],
 };
