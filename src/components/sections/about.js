@@ -118,8 +118,8 @@ const About = () => {
               <a href="https://www.thomsonreuters.com/">media conglomerate</a>, a{' '}
               <a href="https://www.takeda.com/">leading pharmaceutical company</a>, a{' '}
               <a href="https://mila.com/">Swiss start-up</a>, and a{' '}
-              <a href="https://post.ch/">state-owned service companz</a>, where I'm in charge of
-              analysing customer data.
+              <a href="https://post.ch/">state-owned service company</a>, where I'm in charge of
+              analyzing customer data.
             </p>
             <p>
               In my free time I like to keep myself updated about what happens in the world and on
