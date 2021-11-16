@@ -116,10 +116,10 @@ const About = () => {
               {/* Fast-forward to today, and */}
               I've had the privilege of working at a{' '}
               <a href="https://www.thomsonreuters.com/">media conglomerate</a>, a{' '}
-              <a href="https://www.takeda.com/">leading pharmaceutical company</a>, and a{' '}
-              <a href="https://mila.com/">Swiss start-up</a>. I'll join soon{' '}
-              <a href="https://post.ch/">Swiss post</a>, where I'll be in charge of analysing
-              customer data.
+              <a href="https://www.takeda.com/">leading pharmaceutical company</a>, a{' '}
+              <a href="https://mila.com/">Swiss start-up</a>, and a{' '}
+              <a href="https://post.ch/">state-owned service companz</a>, where I'm in charge of
+              analysing customer data.
             </p>
             <p>
               In my free time I like to keep myself updated about what happens in the world and on

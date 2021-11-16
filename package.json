@@ -1,11 +1,11 @@
 {
   "name": "sm.com",
   "description": "Gatsby Personal Website",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Sanzio Monti <sanzio@sanziomonti.xyz>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/proschu2/"
+    "url": "https://github.com/proschu2/gatsby-web"
   },
   "keywords": [
     "gatsby"

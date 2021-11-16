@@ -59,15 +59,10 @@ const Hero = () => {
   const four = (
     <p>
       Technology enthusiast with a passion for data and programming
-      <br /> Currently a Developer at{' '}
-      <a href="https://mila.com/" className="inline-link" target="_blank" rel="noreferrer">
-        Mila
-      </a>
-      , soon a{' '}
+      <br /> Currently a Data Scientist at{' '}
       <a href="https://post.ch" target="_blank" rel="noreferrer">
         Swiss Post
-      </a>{' '}
-      Data Analyst
+      </a>
     </p>
   );
   const five = (
