@@ -5,7 +5,7 @@
   "author": "Sanzio Monti <sanzio@sanziomonti.xyz>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/proschu2/gatsby-web"
+    "url": "https://github.com/proschu2/webpage"
   },
   "keywords": [
     "gatsby"
@@ -23,10 +23,10 @@
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,css,json,md}": [
+    "*.{js,jsx,css,json,md}": [
       "prettier --write"
     ],
-    "*.js": [
+    "*.jsx": [
       "eslint --fix"
     ]
   },

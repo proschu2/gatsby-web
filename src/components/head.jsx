@@ -48,7 +48,8 @@ const Head = ({ title, description, image }) => {
       <script
         defer
         src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon='{"token": "2e8e73a4a3a94db4a8e42903946e35e1"}'></script>
+        data-cf-beacon='{"token": "2e8e73a4a3a94db4a8e42903946e35e1"}'
+      ></script>
 
       {/* <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={twitterUsername} />

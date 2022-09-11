@@ -26,3 +26,4 @@ export { default as IconGit } from './git';
 export { default as IconElasticSearch } from './elasticsearch';
 export { default as IconReact } from './react';
 export { default as IconAngular } from './angular';
+export { default as IconTableau } from './tableau';

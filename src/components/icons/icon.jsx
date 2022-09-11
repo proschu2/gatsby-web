@@ -28,6 +28,7 @@ import {
   IconElasticSearch,
   IconReact,
   IconAngular,
+  IconTableau,
 } from '@components/icons';
 
 const Icon = ({ name }) => {
@@ -86,6 +87,8 @@ const Icon = ({ name }) => {
       return <IconReact />;
     case 'Angular':
       return <IconAngular />;
+    case 'Tableau':
+      return <IconTableau />;
     default:
       return <IconExternal />;
   }

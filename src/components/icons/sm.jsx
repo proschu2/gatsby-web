@@ -11,7 +11,8 @@ const IconSM = () => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="feather feather-sm">
+    className="feather feather-sm"
+  >
     <title>SM</title>
     <g transform="translate(-83.375 -73.351)">
       <path

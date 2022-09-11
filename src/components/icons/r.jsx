@@ -6,7 +6,8 @@ const IconR = () => (
     preserveAspectRatio="xMidYMid"
     width="256"
     height="198"
-    viewBox="0 0 256 197.411">
+    viewBox="0 0 256 197.411"
+  >
     <defs>
       <linearGradient
         id="A"
@@ -15,7 +16,8 @@ const IconR = () => (
         y1="-105.397"
         y2="276.848"
         gradientUnits="userSpaceOnUse"
-        spreadMethod="pad">
+        spreadMethod="pad"
+      >
         <stop offset="0" stopColor="#cbced0" />
         <stop offset="1" stopColor="#84838b" />
       </linearGradient>
@@ -26,7 +28,8 @@ const IconR = () => (
         y1="53.23"
         y2="197.411"
         gradientUnits="userSpaceOnUse"
-        spreadMethod="pad">
+        spreadMethod="pad"
+      >
         <stop offset="0" stopColor="#276dc3" />
         <stop offset="1" stopColor="#165caa" />
       </linearGradient>
