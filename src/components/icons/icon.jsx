@@ -29,6 +29,7 @@ import {
   IconReact,
   IconAngular,
   IconTableau,
+  IconOracle,
 } from '@components/icons';
 
 const Icon = ({ name }) => {
@@ -89,6 +90,8 @@ const Icon = ({ name }) => {
       return <IconAngular />;
     case 'Tableau':
       return <IconTableau />;
+    case 'Oracle DB':
+      return <IconOracle />;
     default:
       return <IconExternal />;
   }

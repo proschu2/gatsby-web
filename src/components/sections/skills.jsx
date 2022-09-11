@@ -65,9 +65,11 @@ const Skills = () => {
     'React',
     'Gatsby',
     'Angular',
+    'Tableau',
     'HTML',
     'CSS',
     'PostgreSQL',
+    'Oracle DB',
     'Git',
     'Elasticsearch',
   ];

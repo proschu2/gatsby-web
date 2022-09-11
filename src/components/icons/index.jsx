@@ -27,3 +27,4 @@ export { default as IconElasticSearch } from './elasticsearch';
 export { default as IconReact } from './react';
 export { default as IconAngular } from './angular';
 export { default as IconTableau } from './tableau';
+export { default as IconOracle } from './oracle';
