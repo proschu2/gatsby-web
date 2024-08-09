@@ -4,6 +4,9 @@ require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
+    flags: {
+      DEV_SSR: true,
+    },
     title: 'Sanzio Monti',
     description:
       'Sanzio Monti is a developer and data scientist, feel free to give a look at his page!',
@@ -21,9 +24,9 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sitemap`,
+    // `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
-    {
+    /*     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'Sanzio Monti',
@@ -34,7 +37,7 @@ module.exports = {
         display: 'minimal-ui',
         icon: 'src/images/favicon.svg',
       },
-    },
+    }, */
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -164,4 +167,5 @@ module.exports = {
       },
     },
   ],
+  pathPrefix: '',
 };

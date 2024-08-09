@@ -54,7 +54,9 @@ const Skills = () => {
   const revealContainer = useRef(null);
 
   useEffect(() => {
-    sr.reveal(revealContainer.current, srConfig());
+    if (sr) {
+      sr.reveal(revealContainer.current, srConfig());
+    }
   }, []);
 
   const skills = [

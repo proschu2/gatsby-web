@@ -324,8 +324,10 @@ const Featured = () => {
   const revealProjects = useRef([]);
 
   useEffect(() => {
-    sr.reveal(revealTitle.current, srConfig());
-    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
+    if (sr) {
+      sr.reveal(revealTitle.current, srConfig());
+      revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
+    }
   }, []);
 
   return (

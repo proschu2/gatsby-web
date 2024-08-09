@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
 
 // https://www.gatsbyjs.com/docs/add-seo-component/
 
 const Head = ({ title, description, image }) => {
-  const { pathname } = useLocation();
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
 
   const { site } = useStaticQuery(
     graphql`
@@ -48,8 +47,7 @@ const Head = ({ title, description, image }) => {
       <script
         defer
         src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon='{"token": "2e8e73a4a3a94db4a8e42903946e35e1"}'
-      ></script>
+        data-cf-beacon='{"token": "2e8e73a4a3a94db4a8e42903946e35e1"}'></script>
 
       {/* <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={twitterUsername} />

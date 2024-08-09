@@ -5,12 +5,19 @@
  */
 
 const path = require('path');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+const events = require('events');
+const nodeExternals = require('webpack-node-externals');
 
+// Increase the maximum number of listeners to avoid memory leak warnings
+events.EventEmitter.defaultMaxListeners = 20;
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateWebpackConfig
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
   // https://www.gatsbyjs.org/docs/debugging-html-builds/#fixing-third-party-modules
   if (stage === 'build-html' || stage === 'develop-html') {
     actions.setWebpackConfig({
+      plugins: [new NodePolyfillPlugin()],
+      externals: [nodeExternals()],
       module: {
         rules: [
           {

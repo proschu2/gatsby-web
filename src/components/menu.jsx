@@ -172,6 +172,9 @@ const Menu = () => {
   };
 
   const handleBackwardTab = e => {
+    if (typeof document === 'undefined') {
+      return;
+    }
     if (document.activeElement === firstFocusableEl) {
       e.preventDefault();
       lastFocusableEl.focus();
@@ -179,6 +182,9 @@ const Menu = () => {
   };
 
   const handleForwardTab = e => {
+    if (typeof document === 'undefined') {
+      return;
+    }
     if (document.activeElement === lastFocusableEl) {
       e.preventDefault();
       firstFocusableEl.focus();
@@ -219,6 +225,9 @@ const Menu = () => {
   };
 
   useEffect(() => {
+    if (typeof document === 'undefined') {
+      return;
+    }
     document.addEventListener('keydown', onKeyDown);
     window.addEventListener('resize', onResize);
 
@@ -244,8 +253,7 @@ const Menu = () => {
           onClick={toggleMenu}
           menuOpen={menuOpen}
           ref={buttonRef}
-          aria-label="Menu"
-        >
+          aria-label="Menu">
           <div className="ham-box">
             <div className="ham-box-inner" />
           </div>

@@ -194,9 +194,11 @@ const Projects = () => {
   const revealProjects = useRef([]);
 
   useEffect(() => {
-    sr.reveal(revealTitle.current, srConfig());
-    sr.reveal(revealArchiveLink.current, srConfig());
-    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
+    if (sr) {
+      sr.reveal(revealTitle.current, srConfig());
+      sr.reveal(revealArchiveLink.current, srConfig());
+      revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
+    }
   }, []);
 
   const GRID_LIMIT = 6;
