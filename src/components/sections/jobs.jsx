@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { srConfig } from '@config';
 import { KEY_CODES } from '@utils';
 import sr from '@utils/sr';
+import { markdownToHtml } from '@utils/md_html';
 
 const StyledJobsSection = styled.section`
   max-width: 1000px;
@@ -179,7 +180,7 @@ const Jobs = () => {
               range
               url
             }
-            html
+            rawMarkdownBody
           }
         }
       }
@@ -255,8 +256,7 @@ const Jobs = () => {
                   role="tab"
                   tabIndex={activeTabId === i ? '0' : '-1'}
                   aria-selected={activeTabId === i ? true : false}
-                  aria-controls={`panel-${i}`}
-                >
+                  aria-controls={`panel-${i}`}>
                   <span>{company}</span>
                 </StyledTabButton>
               );
@@ -267,8 +267,16 @@ const Jobs = () => {
         <StyledTabPanels>
           {jobsData &&
             jobsData.map(({ node }, i) => {
-              const { frontmatter, html } = node;
+              const { frontmatter, rawMarkdownBody } = node;
               const { title, url, company, range } = frontmatter;
+              const [htmlContent, setHtmlContent] = useState('');
+              useEffect(() => {
+                const convertContent = async () => {
+                  const html = await markdownToHtml(rawMarkdownBody);
+                  setHtmlContent(html);
+                };
+                convertContent();
+              }, [rawMarkdownBody]);
 
               return (
                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
@@ -278,8 +286,7 @@ const Jobs = () => {
                     tabIndex={activeTabId === i ? '0' : '-1'}
                     aria-labelledby={`tab-${i}`}
                     aria-hidden={activeTabId !== i}
-                    hidden={activeTabId !== i}
-                  >
+                    hidden={activeTabId !== i}>
                     <h3>
                       <span>{title}</span>
                       <span className="company">
@@ -292,7 +299,7 @@ const Jobs = () => {
 
                     <p className="range">{range}</p>
 
-                    <div dangerouslySetInnerHTML={{ __html: html }} />
+                    <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
                   </StyledTabPanel>
                 </CSSTransition>
               );

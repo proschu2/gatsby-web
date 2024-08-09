@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import sr from '@utils/sr';
 import { srConfig } from '@config';
 import { Icon } from '@components/icons';
-
+import { markdownToHtml } from '@utils/md_html';
 const StyledProjectsGrid = styled.ul`
   ${({ theme }) => theme.mixins.resetList};
 
@@ -312,7 +312,7 @@ const Featured = () => {
               github
               external
             }
-            html
+            rawMarkdownBody
           }
         }
       }
@@ -337,9 +337,17 @@ const Featured = () => {
       <StyledProjectsGrid>
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
-            const { frontmatter, html } = node;
+            const { frontmatter, rawMarkdownBody } = node;
             const { external, title, tech, github, cover } = frontmatter;
             const image = getImage(cover);
+            const [htmlContent, setHtmlContent] = useState('');
+            useEffect(() => {
+              const convertContent = async () => {
+                const html = await markdownToHtml(rawMarkdownBody);
+                setHtmlContent(html);
+              };
+              convertContent();
+            }, [rawMarkdownBody]);
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
@@ -353,7 +361,7 @@ const Featured = () => {
 
                     <div
                       className="project-description"
-                      dangerouslySetInnerHTML={{ __html: html }}
+                      dangerouslySetInnerHTML={{ __html: htmlContent }}
                     />
 
                     {tech.length && (

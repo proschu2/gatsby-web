@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Icon } from '@components/icons';
-
+import { markdownToHtml } from '@utils/md_html';
 const StyledProjectsSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -181,7 +181,7 @@ const Projects = () => {
               github
               external
             }
-            html
+            rawMarkdownBody
           }
         }
       }
@@ -205,9 +205,16 @@ const Projects = () => {
   const projectsToShow = showMore ? projects : firstSix;
 
   const projectInner = node => {
-    const { frontmatter, html } = node;
+    const { frontmatter, rawMarkdownBody } = node;
     const { github, external, title, tech } = frontmatter;
-
+    const [htmlContent, setHtmlContent] = useState('');
+    useEffect(() => {
+      const convertContent = async () => {
+        const html = await markdownToHtml(rawMarkdownBody);
+        setHtmlContent(html);
+      };
+      convertContent();
+    }, [rawMarkdownBody]);
     return (
       <div className="project-inner">
         <header>
@@ -227,8 +234,7 @@ const Projects = () => {
                   aria-label="External Link"
                   className="external"
                   target="_blank"
-                  rel="noreferrer"
-                >
+                  rel="noreferrer">
                   <Icon name="External" />
                 </a>
               )}
@@ -241,7 +247,7 @@ const Projects = () => {
             </a>
           </h3>
 
-          <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
+          <div className="project-description" dangerouslySetInnerHTML={{ __html: htmlContent }} />
         </header>
 
         <footer>
@@ -273,15 +279,13 @@ const Projects = () => {
                 key={i}
                 classNames="fadeup"
                 timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
-                exit={false}
-              >
+                exit={false}>
                 <StyledProject
                   key={i}
                   ref={el => (revealProjects.current[i] = el)}
                   style={{
                     transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
-                  }}
-                >
+                  }}>
                   {projectInner(node)}
                 </StyledProject>
               </CSSTransition>
